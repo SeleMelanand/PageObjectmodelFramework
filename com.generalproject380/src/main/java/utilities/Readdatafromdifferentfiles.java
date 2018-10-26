@@ -11,7 +11,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.testng.annotations.Test;
 
 public class Readdatafromdifferentfiles {
-	Properties property;
+	public static Properties property;
 
 	// Extracting data from Property file-- used to maintain the properties of all
 	// web elements pagewise in a single file
@@ -25,6 +25,7 @@ public class Readdatafromdifferentfiles {
 		return datavalue;
 	}
 
+	
 	// Extracting data from excel sheet and use it testcase during runtime
 	public static Object[][] datareading(String sheetname) throws IOException {
 		FileInputStream fis = new FileInputStream("./testdata/inputdatasheet.xlsx");

@@ -14,16 +14,6 @@ public class Sampletestcase extends ProjectWrapper {
 		
 		launchbrowser("chrome",extractdata("url") );
 	
-		WebElement uname = locateelemnet("id", extractdata("Login.UserName.Id"));
-		typevaluetoidelement(uname, username);
-		
-		WebElement passcode= locateelemnet("id", extractdata("Login.password.Id"));
-		typevaluetoidelement(passcode, password);
-		
-				
-		WebElement sigin = locateelemnet("id", extractdata("Login.sigin.Id"));
-		clickelementbyid(sigin);
-		
 		WebElement search = locateelemnet("id", extractdata("Homepage.Search.Id"));
 		clickelementbyid(search);
 		

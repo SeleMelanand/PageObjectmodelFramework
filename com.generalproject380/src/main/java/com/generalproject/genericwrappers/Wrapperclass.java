@@ -12,10 +12,9 @@ import org.openqa.selenium.support.ui.Select;
 
 import utilities.Readdatafromdifferentfiles;
 
-public class Wrapperclass extends Readdatafromdifferentfiles{
+public class Wrapperclass extends Readdatafromdifferentfiles {
 
-	public RemoteWebDriver driver;
-	public WebElement element = null;
+	public static RemoteWebDriver driver;
 
 	// Launching browser method , Enter the browser url and which browser should be
 	// used for testing need to be given as input
@@ -50,7 +49,7 @@ public class Wrapperclass extends Readdatafromdifferentfiles{
 			}
 			System.out.println("Browser launched successfully");
 		} catch (Exception e) {
-			System.out.println("Unable to load the URL"+ e);
+			System.out.println("Unable to load the URL" + e);
 		}
 
 	}
@@ -61,43 +60,29 @@ public class Wrapperclass extends Readdatafromdifferentfiles{
 
 		switch (locatordetails) {
 		case "id":
-			element = driver.findElementById(locatorvalue);
-			break;
-
+			return driver.findElementById(locatorvalue);
 		case "class":
-			element = driver.findElementByClassName(locatorvalue);
-			break;
-
+			return driver.findElementByClassName(locatorvalue);
 		case "name":
-			element = driver.findElementByName(locatorvalue);
-			break;
-
+			return driver.findElementByName(locatorvalue);
 		case "linktext":
-			element = driver.findElementByLinkText(locatorvalue);
-			break;
-
+			return driver.findElementByLinkText(locatorvalue);
 		case "partiallinktext":
-			element = driver.findElementByPartialLinkText(locatorvalue);
-			break;
-
+			return driver.findElementByPartialLinkText(locatorvalue);
 		case "xpath":
-			element = driver.findElementByXPath(locatorvalue);
-			break;
-
-		default:
-			break;
+			return driver.findElementByXPath(locatorvalue);
 		}
-		return element;
+		return null;
 
 	}
 
 	// enter value for a webelement identified by id
-	public void typevaluetoidelement(WebElement element ,String valuetoenter) {
+	public void typevaluetoidelement(WebElement element, String valuetoenter) {
 
 		try {
 			element.clear();
 			element.sendKeys(valuetoenter);
-			System.out.println("textvalue entered in the given field : "+element);
+			System.out.println("text value entered in the given field : " + element);
 
 		} catch (Exception e) {
 			System.out.println("Unable to identify the element and enter the value" + e);
@@ -107,27 +92,27 @@ public class Wrapperclass extends Readdatafromdifferentfiles{
 	}
 
 	// enter value for a webelement identified by id and enter using mouse
-		public void typevaluetoidelementmouseenter(WebElement element ,String valuetoenter) {
+	public void typevaluetoidelementmouseenter(WebElement element, String valuetoenter) {
 
-			try {
-				element.clear();
-				element.sendKeys(valuetoenter, Keys.ENTER);
-				System.out.println("textvalue entered in the given field : ");
+		try {
+			element.clear();
+			element.sendKeys(valuetoenter, Keys.ENTER);
+			System.out.println("text value entered in the given field : " + element);
 
-			} catch (Exception e) {
-				System.out.println("Unable to identify the element and enter the value" + e);
-			} finally {
-				// screenshot need to be taken
-			}
+		} catch (Exception e) {
+			System.out.println("Unable to identify the element and enter the value" + e);
+		} finally {
+			// screenshot need to be taken
 		}
-	
+	}
+
 	// enter value for a webelement identified by classname
-	public void typevaluetoclasselement(WebElement element ,String valuetoenter) {
+	public void typevaluetoclasselement(WebElement element, String valuetoenter) {
 
 		try {
 			element.clear();
 			element.sendKeys(valuetoenter);
-			System.out.println("textvalue entered in the given field : ");
+			System.out.println("text value entered in the given field : " + element);
 
 		} catch (Exception e) {
 			System.out.println("Unable to identify the element and enter the value" + e);
@@ -137,12 +122,12 @@ public class Wrapperclass extends Readdatafromdifferentfiles{
 	}
 
 	// enter value for a webelement identified by name
-	public void typevaluetonameelement(WebElement element ,String valuetoenter) {
+	public void typevaluetonameelement(WebElement element, String valuetoenter) {
 
 		try {
 			element.clear();
 			element.sendKeys(valuetoenter);
-			System.out.println("textvalue entered in the given field : ");
+			System.out.println("text value entered in the given field : " + element);
 
 		} catch (Exception e) {
 			System.out.println("Unable to identify the element and enter the value" + e);
@@ -152,12 +137,12 @@ public class Wrapperclass extends Readdatafromdifferentfiles{
 	}
 
 	// enter value for a webelement identified by xpath
-	public void typevaluetoxpathelement(WebElement element ,String valuetoenter) {
+	public void typevaluetoxpathelement(WebElement element, String valuetoenter) {
 
 		try {
 			element.clear();
 			element.sendKeys(valuetoenter);
-			System.out.println("textvalue entered in the given field : ");
+			System.out.println("text value entered in the given field : " + element);
 
 		} catch (Exception e) {
 			System.out.println("Unable to identify the element and enter the value" + e);
@@ -171,7 +156,7 @@ public class Wrapperclass extends Readdatafromdifferentfiles{
 
 		try {
 			element.click();
-			System.out.println("textvalue entered in the given field : ");
+			System.out.println("Element selected successfully: " + element);
 
 		} catch (Exception e) {
 			System.out.println("Unable to identify the element and enter the value" + e);
@@ -185,7 +170,7 @@ public class Wrapperclass extends Readdatafromdifferentfiles{
 
 		try {
 			element.click();
-			System.out.println("textvalue entered in the given field : ");
+			System.out.println("Element selected successfully: " + element);
 
 		} catch (Exception e) {
 			System.out.println("Unable to identify the element and enter the value" + e);
@@ -199,7 +184,7 @@ public class Wrapperclass extends Readdatafromdifferentfiles{
 
 		try {
 			element.click();
-			System.out.println("textvalue entered in the given field : ");
+			System.out.println("Element selected successfully: " + element);
 
 		} catch (Exception e) {
 			System.out.println("Unable to identify the element and enter the value" + e);
@@ -213,7 +198,7 @@ public class Wrapperclass extends Readdatafromdifferentfiles{
 
 		try {
 			element.click();
-			System.out.println("textvalue entered in the given field : ");
+			System.out.println("Element selected successfully: " + element);
 
 		} catch (Exception e) {
 			System.out.println("Unable to identify the element and enter the value" + e);
@@ -281,18 +266,17 @@ public class Wrapperclass extends Readdatafromdifferentfiles{
 			// screenshot need to be taken
 		}
 	}
-	
-	//Retrieving text value from the webelement
+
+	// Retrieving text value from the webelement
 	public String getvaluefromwebelement(WebElement element) {
-		String textvalue=null;
+		String textvalue = null;
 		try {
 			textvalue = element.getText();
-			System.out.println("Value retrieved successfully"+ textvalue);
+			System.out.println("Value retrieved successfully" + textvalue);
 		} catch (Exception e) {
-			System.out.println("Unable to retrieve the value"+ e);
-		}	
+			System.out.println("Unable to retrieve the value" + e);
+		}
 		return textvalue;
 	}
-	
-	
+
 }
